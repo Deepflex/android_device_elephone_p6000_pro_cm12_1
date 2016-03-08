@@ -64,6 +64,7 @@ on post-fs-data
    chmod 0660 /dev/DW9761AF 
     chown system camera /dev/DW9761AF 
 
+# fix for Elephone p6000_pro camera
    chmod 0660 /dev/DW9718AF 
     chown system camera /dev/DW9718AF
 

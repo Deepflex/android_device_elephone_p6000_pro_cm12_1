@@ -101,7 +101,6 @@ system/etc/custom.conf
 system/etc/dhcpcd/dhcpcd-hooks/20-dns.conf
 system/etc/dhcpcd/dhcpcd-hooks/95-configured
 system/etc/dhcpcd/dhcpcd-run-hooks
-
 system/etc/firmware/ROMv2_lm_patch_1_0_hdr.bin
 system/etc/firmware/ROMv2_lm_patch_1_1_hdr.bin
 system/etc/firmware/WIFI_RAM_CODE_6735
@@ -163,6 +162,8 @@ system/lib/libMtkOmxVdec.so
 system/lib/libMtkOmxVenc.so
 system/lib/libMtkOmxVorbisEnc.so
 system/lib/libHEVCdec_sa.ca7.android.so
+system/lib/libh264enc_sa.ca7.so
+system/lib/libh264enc_sb.ca7.so
 system/lib/libMtkVideoSpeedEffect.so
 system/lib/libMtkVideoTranscoder.so
 system/lib/libPQDCjni.so
@@ -285,6 +286,7 @@ system/lib/libmmprofile_jni.so
 system/lib/libmmsdkservice.so
 system/lib/libmnl.so
 system/lib/libmp4enc_sa.ca7.so
+system/lib/libmp4enc_xa.ca7.so
 system/lib/libmpo.so
 system/lib/libmpodecoder.so
 system/lib/libmpoencoder.so
@@ -566,21 +568,24 @@ system/lib/libfmmt6630.so
 system/lib64/libfmmt6630.so
 system/lib64/libmtksqlite3_custom.so
 system/lib64/libmtksqlite3_android.so
+system/bin/fpsvcd
 system/bin/akmd09911
 system/bin/program_binary_service
+system/bin/test/fpsvcd/auto_test.sh
+system/bin/test/fpsvcd/fpsvcd_c
+system/bin/test/fpsvcd/fpsvcd_s
+system/bin/test/slcryption/sl_sec_encode
+system/bin/test/slversion/slver
 system/lib/libcam.hal3a.v3.dng.so
 system/lib64/libcam.hal3a.v3.dng.so
 system/lib/libmmsdkservice.feature.so
 system/lib64/libmmsdkservice.feature.so
 system/lib/libfeatureiodrv.so
 system/lib64/libfeatureiodrv.so
+system/lib/libsileadinc_dev.so
+system/lib/libslfpjni.so
+system/lib64/libsileadinc_dev.so
+system/lib64/libslfpjni.so
+system/lib64/libslfpauth.a
 system/lib/libcameraservice.so
 system/lib64/libcameraservice.so
-
-#Fingerprint libs
-#system/lib/libsileadinc_dev.so
-#system/lib/libslfpjni.so
-#system/lib64/libsileadinc_dev.so
-#system/lib64/libslfpjni.so
-#system/lib64/libslfpauth.a
-#system/bin/fpsvcd

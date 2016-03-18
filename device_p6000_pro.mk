@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/elephone/p6000_pro/p6000_pro-vendor.mk)
+$(call inherit-product, vendor/elephone/p6000_pro/p6000_pro-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/elephone/p6000_pro/overlay
 
@@ -43,6 +43,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
+	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
 	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
@@ -50,6 +51,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml \
+	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -57,8 +59,13 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/permissions/media_codecs.xml \
     	$(LOCAL_PATH)/configs/android.hardware.microphone.xml:system/etc/permissions/android.hardware.microphone.xml \
     	$(LOCAL_PATH)/configs/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-	$(LOCAL_PATH)/configs/platform.xml:system/etc/permissions/platform.xml 
+	$(LOCAL_PATH)/configs/platform.xml:system/etc/permissions/platform.xml
     
+# CM's Snap camera
+PRODUCT_PACKAGES += \
+	Snap
+
+
 # Bluetooth
 PRODUCT_PACKAGES += \
 	libbt-vendor
@@ -93,6 +100,10 @@ PRODUCT_COPY_FILES += \
 # Charger
 PRODUCT_PACKAGES += \
       	charger_res_images
+
+# Live Display
+PRODUCT_PACKAGES += \
+	libjni_livedisplay
 
 # Telecom
 PRODUCT_COPY_FILES += \
@@ -162,7 +173,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.secure=0 \
 	ro.allow.mock.location=1 \
 	ro.debuggable=1 \
-	ro.adb.secure=0 \
+	ro.adb.secure=1 \
 	persist.service.acm.enable=0 \
-	persist.sys.usb.config=mtp \
-	ro.oem_unlock_supported=1
+	ro.oem_unlock_supported=1 \
+	persist.sys.usb.config=mtp

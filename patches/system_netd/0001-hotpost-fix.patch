@@ -10,7 +10,6 @@ Content-Transfer-Encoding: 8bit
 Change-Id: Ia628e1992fd978c17da6f9c526160adcdae9a693
 Signed-off-by: 秋叶随风ivan <yanziily@gmail.com>
 
-
 diff -ur netd/server/SoftapController.cpp netd_mtk/server/SoftapController.cpp
 --- netd/server/SoftapController.cpp	2016-01-22 15:55:47.409331000 -0800
 +++ netd_mtk/server/SoftapController.cpp	2016-01-23 05:24:28.098782000 -0800

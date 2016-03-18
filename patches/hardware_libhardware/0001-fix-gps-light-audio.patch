@@ -10,10 +10,15 @@ Content-Transfer-Encoding: 8bit
 Change-Id: I3d9ff9bcb8c7ee46b5820d9ba1be0406236c09fb
 Signed-off-by: 秋叶随风ivan <yanziily@gmail.com>
 
-diff -ur libhardware/include/hardware/gps.h libhardware_mtk/include/hardware/gps.h
---- libhardware/include/hardware/gps.h	2016-01-22 15:47:44.063878000 -0800
-+++ libhardware_mtk/include/hardware/gps.h	2016-01-23 05:25:12.364466000 -0800
-@@ -37,6 +37,9 @@
+---
+ include/hardware/gps.h | 49 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+diff --git a/include/hardware/gps.h b/include/hardware/gps.h
+index fb1f669..580d5a4 100644
+--- a/include/hardware/gps.h
++++ b/include/hardware/gps.h
+@@ -37,6 +37,9 @@ __BEGIN_DECLS
  /** Milliseconds since January 1, 1970 */
  typedef int64_t GpsUtcTime;
  
@@ -23,7 +28,7 @@ diff -ur libhardware/include/hardware/gps.h libhardware_mtk/include/hardware/gps
  /** Maximum number of SVs for gps_sv_status_callback(). */
  #define GPS_MAX_SVS 32
  
-@@ -482,6 +485,33 @@
+@@ -482,6 +485,33 @@ typedef struct {
      float   azimuth;
  } GpsSvInfo;
  
@@ -57,7 +62,7 @@ diff -ur libhardware/include/hardware/gps.h libhardware_mtk/include/hardware/gps
  /** Represents SV status. */
  typedef struct {
      /** set to sizeof(GpsSvStatus) */
-@@ -511,6 +541,18 @@
+@@ -511,6 +541,18 @@ typedef struct {
  } GpsSvStatus;
  
  
@@ -76,7 +81,7 @@ diff -ur libhardware/include/hardware/gps.h libhardware_mtk/include/hardware/gps
  /* 2G and 3G */
  /* In 3G lac is discarded */
  typedef struct {
-@@ -550,6 +592,12 @@
+@@ -550,6 +592,12 @@ typedef void (* gps_status_callback)(GpsStatus* status);
   */
  typedef void (* gps_sv_status_callback)(GpsSvStatus* sv_info);
  
@@ -89,7 +94,7 @@ diff -ur libhardware/include/hardware/gps.h libhardware_mtk/include/hardware/gps
  /** Callback for reporting NMEA sentences.
   *  Can only be called from a thread created by create_thread_cb.
   */
-@@ -583,6 +631,7 @@
+@@ -583,6 +631,7 @@ typedef struct {
      gps_location_callback location_cb;
      gps_status_callback status_cb;
      gps_sv_status_callback sv_status_cb;
@@ -97,4 +102,3 @@ diff -ur libhardware/include/hardware/gps.h libhardware_mtk/include/hardware/gps
      gps_nmea_callback nmea_cb;
      gps_set_capabilities set_capabilities_cb;
      gps_acquire_wakelock acquire_wakelock_cb;
-

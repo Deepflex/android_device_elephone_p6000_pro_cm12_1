@@ -18,6 +18,7 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_VARIANT := generic
+TARGET_BOARD_SUFFIX := _64
  
 #32 bit
 TARGET_2ND_ARCH := arm
@@ -26,12 +27,11 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
  
-#ARCH_ARM_HAVE_NEON := true
-#ARCH_ARM_HAVE_VFP := true
+ARCH_ARM_HAVE_NEON := true
+ARCH_ARM_HAVE_VFP := true
  
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_CPU_SMP := true
-#TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 TARGET_IS_64_BIT := true
 TARGET_CPU_CORTEX_A53 := true
@@ -47,7 +47,7 @@ TARGET_GLOBAL_CFLAGS   += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
-TARGET_USERIMAGES_USE_EXT4:=true
+TARGET_USERIMAGES_USE_EXT4 := true
 
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
  
@@ -68,16 +68,16 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000
  
 # build kernel from source
-# TARGET_KERNEL_SOURCE := kernel/elephone/p6000_pro
-# TARGET_KERNEL_ARCH := arm64
-# TARGET_KERNEL_HEADER_ARCH := arm64
-# TARGET_KERNEL_CONFIG := cyanogenmod_p6000_pro_defconfig
-# TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-# MTK_APPENDED_DTB_SUPPORT := yes
-# BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_SOURCE := kernel/elephone/p6000_pro
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CONFIG := cyanogenmod_p6000_pro_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+MTK_APPENDED_DTB_SUPPORT := yes
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
  
 # prebuild kernel as fallback
-TARGET_PREBUILT_KERNEL := device/elephone/p6000_pro/prebuilt/kernel
+#TARGET_PREBUILT_KERNEL := device/elephone/p6000_pro/prebuilt/kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # system.prop
@@ -131,7 +131,7 @@ BOARD_EGL_CFG := device/elephone/p6000_pro/egl.cfg
 TARGET_RECOVERY_FSTAB := device/elephone/p6000_pro/recovery/root/fstab.mt6753
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness\"
 
-#twrp ( WIP do not use!!! see comments )
+#twrp
 
 #tw_theme is essential flag
 TW_THEME := portrait_hdpi

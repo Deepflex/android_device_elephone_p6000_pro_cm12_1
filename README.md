@@ -5,6 +5,7 @@ Nofearnohappy
 Jianminglok 
 Visi0nary
 CyanogenMod team
+Walter79
 
 Work:
 GPS
@@ -18,6 +19,8 @@ Sound
 Sound in bluetooth
 USB Connection
 RIL (Data connection, USSD and etc)
+Hotspot
+And etc...
 
 Bugs:
-Not founded
+FM

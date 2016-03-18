@@ -1,6 +1,6 @@
 #
 #
-# system.prop for P6000 Pro
+# system.prop for p6000_pro
 #
 
 rild.libpath=/system/lib64/mtk-ril.so
@@ -47,6 +47,9 @@ ro.sys.usb.bicr=no
 # USB Charge only function
 ro.sys.usb.charging.only=yes
 
+# display density
+ro.sf.lcd_density=320
+
 # audio
 ro.camera.sound.forced=0
 ro.audio.silent=0
@@ -58,9 +61,6 @@ ro.kernel.zio=38,108,105,16
 
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
-
-#qinhai change density
-ro.sf.lcd_density=320
 
 # button jack mode & switch
 persist.sys.button_jack_profile=volume
